@@ -1,5 +1,5 @@
 import { Queue } from "./Queue";
-import { MessageGate } from "./MessageGate";
+import { MessageGate } from "./Entities";
 import { QueueConnection } from "./QueueConnection";
 import { MessageGateCollection } from "./MessageGateCollection";
 

@@ -1,5 +1,5 @@
-import { Queue } from "./Queue";
-import { Message } from "./types";
+import { Queue } from "../Queue";
+import { Message } from "../types";
 import { Message as IncomingMessage } from "amqplib";
 
 export class Job<T extends Message = Message> {

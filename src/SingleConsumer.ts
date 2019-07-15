@@ -1,5 +1,4 @@
-import { Consumer } from "./Abstracts/Consumer";
-import { Job } from "./Job";
+import { Consumer, Job } from "./Entities";
 
 export class SingleConsumer implements Consumer {
     public constructor(private readonly consumer: Consumer) {

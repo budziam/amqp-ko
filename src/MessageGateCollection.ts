@@ -1,4 +1,4 @@
-import { MessageGate } from "./MessageGate";
+import { MessageGate } from "./Entities";
 import { InvalidMessageTypeException, InvalidRoutingKeyException } from "./Exceptions";
 import { MessageType } from "./types";
 
