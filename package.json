@@ -1,6 +1,6 @@
 {
   "name": "amqp-ko",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "license": "MIT",
   "author": "Michał Budziak <michal.mariusz.b@gmail.com>",
   "repository": {
