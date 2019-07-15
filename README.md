@@ -32,7 +32,8 @@ const queue = createQueue("localhost", 5672, "rabbitmq", "rabbitmq", "exchange-n
 ```js
 class ConnectUserWithTopic {
     async consume(job) {
-        // Connect user with a topic using "job.message.userId" and "job.message.topicName"
+        // Put here some code to connect user with a topic
+        // using "job.message.userId" and "job.message.topicName"
         await job.ack();
     }
 }
