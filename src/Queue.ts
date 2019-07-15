@@ -1,8 +1,7 @@
 import { QueueConnection } from "./QueueConnection";
-import { Consumer } from "./Abstracts/Consumer";
+import { Consumer, Job } from "./Entities";
 import { Channel, Message as IncomingMessage } from "amqplib";
 import { MessageGateCollection } from "./MessageGateCollection";
-import { Job } from "./Job";
 import { getClass, getHeaderValue, marshal, randomInt } from "./utils";
 import { Message, MessageType } from "./types";
 import { InvalidMessageTypeException, InvalidRoutingKeyException } from "./Exceptions";

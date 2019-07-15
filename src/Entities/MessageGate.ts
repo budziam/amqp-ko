@@ -1,5 +1,5 @@
-import { Unmarshaller } from "./Abstracts/Unmarshaller";
-import { MessageType } from "./types";
+import { Unmarshaller } from "./Unmarshaller";
+import { MessageType } from "../types";
 
 export class MessageGate {
     public constructor(
