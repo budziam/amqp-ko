@@ -2,8 +2,8 @@ import { QueueConnection } from "./QueueConnection";
 import { Consumer, Job } from "./Entities";
 import { Channel, Message as IncomingMessage } from "amqplib";
 import { MessageGateCollection } from "./MessageGateCollection";
-import { getClass, getHeaderValue, marshal, randomInt } from "./utils";
-import { Message, MessageType } from "./types";
+import { getHeaderValue, marshal, randomInt } from "./utils";
+import { Message, MessageConstructor } from "./types";
 import { InvalidMessageTypeException, InvalidRoutingKeyException } from "./Exceptions";
 import logger from "./logger";
 
@@ -19,7 +19,10 @@ const calculateRequeueBackoff = (message: IncomingMessage): number => {
     return Math.min(MAX_DELAY_SECONDS, delay) * 1000;
 };
 
-const findConsumer = (consumers: Map<MessageType, Consumer>, messageType: MessageType) => {
+const findConsumer = (
+    consumers: Map<MessageConstructor, Consumer>,
+    messageType: MessageConstructor,
+) => {
     if (consumers.has(messageType)) {
         return consumers.get(messageType);
     }
@@ -45,7 +48,7 @@ export class Queue {
     }
 
     public async produce(message: Message): Promise<boolean> {
-        const gate = this.messageGates.getByMessageType(getClass(message));
+        const gate = this.messageGates.getByMessageType(message.constructor as MessageConstructor);
         const routingKey = gate.routingKey;
         const body = Buffer.from(JSON.stringify(marshal(message)));
 
@@ -55,7 +58,10 @@ export class Queue {
         });
     }
 
-    public async consume(queueName: string, consumers: Map<MessageType, Consumer>): Promise<void> {
+    public async consume(
+        queueName: string,
+        consumers: Map<MessageConstructor, Consumer>,
+    ): Promise<void> {
         const channel = await this.channel();
         await channel.assertExchange(this.exchangeName, "topic", { durable: true });
         await channel.assertQueue(queueName, { durable: true });
@@ -122,7 +128,7 @@ export class Queue {
 
     private async processMessage(
         incomingMessage: IncomingMessage,
-        consumers: Map<MessageType, Consumer>,
+        consumers: Map<MessageConstructor, Consumer>,
     ): Promise<void> {
         let consumer: Consumer;
         let job: Job;

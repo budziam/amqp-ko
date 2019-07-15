@@ -1,6 +1,6 @@
 import { MessageGate } from "./Entities";
 import { InvalidMessageTypeException, InvalidRoutingKeyException } from "./Exceptions";
-import { MessageType } from "./types";
+import { MessageConstructor } from "./types";
 
 export class MessageGateCollection {
     public constructor(private readonly messageGates: MessageGate[]) {
@@ -17,7 +17,7 @@ export class MessageGateCollection {
         throw new InvalidRoutingKeyException(routingKey);
     }
 
-    public getByMessageType(messageType: MessageType): MessageGate {
+    public getByMessageType(messageType: MessageConstructor): MessageGate {
         const messageGate = this.messageGates.find(gate => gate.messageType === messageType);
 
         if (messageGate) {

@@ -1,5 +1,5 @@
 import { Message } from "../types";
 
-export interface Unmarshaller {
-    unmarshal(data: any): Message;
+export interface Unmarshaller<T extends Message = Message> {
+    unmarshal(data: any): T;
 }
