@@ -2,7 +2,7 @@
 Object oriented AMQP layer for microservices communication.
 
 ## Usage
-The recommended way to use Kø is to create your own queue object. The simplest way to do this is using `createQueue` function.
+The recommended way to use AMQP Kø is to create your own queue object. The simplest way to do this is using `createQueue` function.
 
 ### Create queue
 ```js
@@ -50,3 +50,19 @@ queue.consume(
 const message = new TopicFollow(120, "entertainment");
 queue.produce(message);
 ```
+
+## Installation
+```bash
+yarn add amqp-ko
+```
+```bash
+npm install amqp-ko
+```
+
+## Run tests
+All of the AMQP Kø tests are written with jest. They can be run with yarn
+```bash
+yarn test
+```
+
+#### Author: [Michał Budziak]
