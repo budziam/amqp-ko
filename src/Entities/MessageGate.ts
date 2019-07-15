@@ -1,11 +1,11 @@
 import { Unmarshaller } from "./Unmarshaller";
-import { MessageType } from "../types";
+import { Message, MessageConstructor } from "../types";
 
-export class MessageGate {
+export class MessageGate<T extends Message = Message> {
     public constructor(
         public readonly routingKey: string,
-        public readonly messageType: MessageType,
-        public readonly unmarshaller: Unmarshaller,
+        public readonly messageType: MessageConstructor<T>,
+        public readonly unmarshaller: Unmarshaller<T>,
     ) {
         //
     }

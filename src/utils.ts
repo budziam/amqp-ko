@@ -15,8 +15,6 @@ export const getHeaderValue = <T>(
 export const randomInt = (min: number, max: number): number =>
     Math.floor(Math.random() * (max - min + 1)) + min;
 
-export const getClass = (object: object): any => object.constructor;
-
 export const marshal = (message: Message): string => new KeyRenamer(snakeCase).deep(message);
 
 export const sleep = async (ms: number) => new Promise(resolve => setTimeout(resolve, ms));

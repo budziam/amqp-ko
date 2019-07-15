@@ -1,2 +1,2 @@
 export type Message = object;
-export type MessageType = new (...args: any[]) => Message;
+export type MessageConstructor<T extends Message = Message> = new (...args: any[]) => T;
