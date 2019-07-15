@@ -19,7 +19,7 @@
     "build": "tsc",
     "lint": "tslint -p tsconfig.json -t stylish",
     "lint:fix": "yarn lint --fix",
-    "pretty": "prettier '{src,test}/**/*.ts' --check",
+    "pretty": "prettier '{src,__tests__}/**/*.ts' --check",
     "pretty:fix": "yarn pretty --write",
     "postinstall": "tsc",
     "test": "jest --reporters=default"
