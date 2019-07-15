@@ -1,2 +1,2 @@
-# amqp-ko
-Object oriented amqp layer for microservices communication 
+# Kø
+Object oriented AMQP layer for microservices communication.

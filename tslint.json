@@ -1,0 +1,57 @@
+{
+  "lintOptions": {
+    "typeCheck": true
+  },
+  "exclude": [
+    "**/*.js"
+  ],
+  "extends": [
+    "tslint:all",
+    "tslint-config-prettier"
+  ],
+  "rules": {
+    "await-promise": false,
+    "binary-expression-operand-order": false,
+    "comment-format": false,
+    "completed-docs": false,
+    "file-name-casing": [
+      true,
+      "camel-case",
+      "pascal-case"
+    ],
+    "interface-name": false,
+    "member-ordering": false,
+    "newline-before-return": false,
+    "no-any": false,
+    "no-async-without-await": false,
+    "no-default-export": false,
+    "no-default-import": false,
+    "no-duplicate-imports": [true, {"allow-namespace-imports": true}],
+    "no-import-side-effect": false,
+    "no-inferrable-types": false,
+    "no-magic-numbers": false,
+    "no-parameter-properties": false,
+    "no-unbound-method": false,
+    "no-use-before-declare": false,
+    "no-unsafe-any": false,
+    "no-void-expression": false,
+    "object-literal-sort-keys": false,
+    "ordered-imports": false,
+    "prefer-function-over-method": false,
+    "strict-boolean-expressions": false,
+    "strict-comparisons": false,
+    "typedef": [
+      true,
+      "call-signature",
+      "parameter",
+      "property-declaration",
+      "member-variable-declaration"
+    ],
+    "variable-name": [
+      true,
+      "allow-leading-underscore",
+      "ban-keywords",
+      "check-format"
+    ]
+  }
+}
