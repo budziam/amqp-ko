@@ -30,7 +30,7 @@ const queue = createQueue("localhost", 5672, "rabbitmq", "rabbitmq", "exchange-n
 
 ### Consume messages
 ```js
-export class ConnectUserWithTopic {
+class ConnectUserWithTopic {
     async consume(job) {
         // Connect user with a topic using "job.message.userId" and "job.message.topicName"
         await job.ack();
@@ -66,3 +66,5 @@ yarn test
 ```
 
 #### Author: [Michał Budziak]
+
+[Michał Budziak]: http://github.com/budziam

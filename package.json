@@ -2,6 +2,19 @@
   "name": "amqp-ko",
   "version": "1.1.0",
   "license": "MIT",
+  "author": "Michał Budziak <michal.mariusz.b@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/budziam/amqp-ko.git"
+  },
+  "keywords": [
+    "amqp-ko",
+    "amqp",
+    "microservice",
+    "rabbitmq",
+    "queue",
+    "tools"
+  ],
   "scripts": {
     "build": "tsc",
     "lint": "tslint -p tsconfig.json -t stylish",
@@ -32,16 +45,5 @@
     "ts-node": "^8.3.0",
     "tslint": "^5.18.0",
     "tslint-config-prettier": "^1.18.0"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.ts": [
-      "prettier --write",
-      "git add"
-    ]
   }
 }
