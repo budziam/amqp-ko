@@ -1,8 +1,8 @@
-import { createQueue, MessageGate, Queue } from "../../src";
+import { createQueue, Message, MessageGate, Queue } from "../../src";
 
-class TopicFollow {
+class TopicFollow extends Message {
     public constructor(public readonly userId, public readonly topicName) {
-        //
+        super();
     }
 }
 

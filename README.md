@@ -10,6 +10,7 @@ import { createQueue, Message } from "amqp-ko";
 
 class TopicFollow extends Message {
     constructor(userId, topicName) {
+        super();
         this.userId = userId;
         this.topicName = topicName;
     }
