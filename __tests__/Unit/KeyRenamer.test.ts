@@ -1,8 +1,9 @@
 import { KeyRenamer } from "../../src/KeyRenamer";
+import { Message } from "../../src/Entities";
 
-class FooMessage {
+class FooMessage extends Message {
     public constructor(public readonly test: any) {
-        //
+        super();
     }
 }
 
