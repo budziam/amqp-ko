@@ -6,9 +6,9 @@ The recommended way to use AMQP Kø is to create your own queue object. The simp
 
 ### Create queue
 ```js
-import { createQueue } from "amqp-ko";
+import { createQueue, Message } from "amqp-ko";
 
-class TopicFollow {
+class TopicFollow extends Message {
     constructor(userId, topicName) {
         this.userId = userId;
         this.topicName = topicName;
