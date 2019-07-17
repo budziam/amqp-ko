@@ -1,4 +1,4 @@
-import { MessageConstructor } from "../types";
+import { MessageConstructor } from "../Entities";
 
 export class InvalidMessageTypeException extends Error {
     public constructor(messageType: MessageConstructor) {

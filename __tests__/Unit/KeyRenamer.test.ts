@@ -18,7 +18,7 @@ describe("KeyRenamer", () => {
         expect(renamed).toEqual([{ atest: "foobar" }, { atest: "boobo" }]);
     });
 
-    it("renames objects", () => {
+    it("does not rename objects", () => {
         // given
         const toRename = new FooMessage({ example: 1 });
 
@@ -28,7 +28,7 @@ describe("KeyRenamer", () => {
         // then
         expect(renamed).toEqual({
             atest: {
-                aexample: 1,
+                example: 1,
             },
         });
     });

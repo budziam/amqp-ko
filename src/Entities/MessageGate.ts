@@ -1,5 +1,5 @@
 import { Unmarshaller } from "./Unmarshaller";
-import { Message, MessageConstructor } from "../types";
+import { Message, MessageConstructor } from "./Message";
 
 export class MessageGate<T extends Message = Message> {
     public constructor(
