@@ -1,6 +1,5 @@
-import { MessageGate } from "./Entities";
+import { MessageConstructor, MessageGate } from "./Entities";
 import { InvalidMessageTypeException, InvalidRoutingKeyException } from "./Exceptions";
-import { MessageConstructor } from "./types";
 
 export class MessageGateCollection {
     public constructor(private readonly messageGates: MessageGate[]) {

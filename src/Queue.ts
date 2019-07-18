@@ -1,9 +1,8 @@
 import { QueueConnection } from "./QueueConnection";
-import { Consumer, Job } from "./Entities";
+import { Consumer, Job, Message, MessageConstructor } from "./Entities";
 import { Channel, Message as IncomingMessage } from "amqplib";
 import { MessageGateCollection } from "./MessageGateCollection";
-import { getHeaderValue, marshal, randomInt } from "./utils";
-import { Message, MessageConstructor } from "./types";
+import { getHeaderValue, randomInt } from "./utils";
 import { InvalidMessageTypeException, InvalidRoutingKeyException } from "./Exceptions";
 import logger from "./logger";
 
@@ -50,7 +49,7 @@ export class Queue {
     public async produce(message: Message): Promise<boolean> {
         const gate = this.messageGates.getByMessageType(message.constructor as MessageConstructor);
         const routingKey = gate.routingKey;
-        const body = Buffer.from(JSON.stringify(marshal(message)));
+        const body = Buffer.from(JSON.stringify(message));
 
         const channel = await this.channel();
         return channel.publish(this.exchangeName, routingKey, body, {

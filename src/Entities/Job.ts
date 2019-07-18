@@ -1,6 +1,6 @@
 import { Queue } from "../Queue";
-import { Message } from "../types";
 import { Message as IncomingMessage } from "amqplib";
+import { Message } from "./Message";
 
 export class Job<T extends Message = Message> {
     private processed: boolean = false;
