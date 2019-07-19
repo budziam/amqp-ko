@@ -18,7 +18,7 @@ export class KeyRenamer {
     }
 
     private renameObject(toRename: Message): object {
-        const output = {};
+        const output: any = {};
 
         for (const [key, value] of Object.entries(toRename)) {
             output[this.renamer(key)] = this.deep(value);
