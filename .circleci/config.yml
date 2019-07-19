@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-    - image: circleci/node:latest
+    - image: circleci/node:12
 
     steps:
     - checkout
@@ -29,7 +29,7 @@ jobs:
 
     - run:
         name: Build
-        command: yarn build
+        command: yarn build --build tsconfig.test.json
 
     - run:
         name: Test
