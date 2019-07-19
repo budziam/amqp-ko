@@ -1,7 +1,7 @@
 import { createQueue, Message, MessageGate, Queue } from "../../src";
 
 class TopicFollow extends Message {
-    public constructor(public readonly userId, public readonly topicName) {
+    public constructor(public readonly userId: number, public readonly topicName: string) {
         super();
     }
 }

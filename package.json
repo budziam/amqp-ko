@@ -17,7 +17,7 @@
   ],
   "scripts": {
     "build": "tsc",
-    "lint": "tslint -p tsconfig.json -t stylish",
+    "lint": "tslint -p tsconfig.test.json -t stylish",
     "lint:fix": "yarn lint --fix",
     "pretty": "prettier '{src,__tests__}/**/*.ts' --check",
     "pretty:fix": "yarn pretty --write",
