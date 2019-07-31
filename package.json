@@ -1,11 +1,15 @@
 {
   "name": "amqp-ko",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "license": "MIT",
-  "author": "Michał Budziak <michal.mariusz.b@gmail.com>",
+  "author": "Michał Budziak",
+  "homepage": "https://nalunch.com/",
   "repository": {
     "type": "git",
     "url": "https://github.com/budziam/amqp-ko.git"
+  },
+  "bugs": {
+    "url": "https://github.com/budziam/amqp-ko/issues"
   },
   "keywords": [
     "amqp-ko",
