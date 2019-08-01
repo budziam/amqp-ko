@@ -16,7 +16,7 @@ export class QueueConnection {
     }
 
     public async connection(): Promise<Connection> {
-        if (!this.connected) {
+        if (!this._connection) {
             this._connection = await this.connect();
         }
 
@@ -24,7 +24,7 @@ export class QueueConnection {
     }
 
     public async disconnect(): Promise<void> {
-        if (this.connected) {
+        if (this._connection) {
             await this._connection.close();
             this._connection = undefined;
         }
@@ -53,9 +53,5 @@ export class QueueConnection {
 
     private get connectionUrl(): string {
         return `amqp://${this.username}:${this.password}@${this.host}:${this.port}`;
-    }
-
-    private get connected(): boolean {
-        return this._connection !== undefined;
     }
 }
