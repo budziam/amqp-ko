@@ -5,14 +5,14 @@
     "moduleResolution": "node",
     "module": "commonjs",
     "outDir": "./dist",
-    "alwaysStrict": true,
     "declaration": true,
     "downlevelIteration": true,
-    "noImplicitAny": true,
-    "noImplicitReturns": true,
-    "noImplicitThis": true,
     "esModuleInterop": true,
-    "sourceMap": true
+    "noImplicitReturns": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true
+
   },
   "include": [
     "src/**/*.ts"

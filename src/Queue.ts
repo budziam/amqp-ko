@@ -21,9 +21,11 @@ const calculateRequeueBackoff = (message: IncomingMessage): number => {
 const findConsumer = (
     consumers: Map<MessageConstructor, Consumer>,
     messageType: MessageConstructor,
-) => {
-    if (consumers.has(messageType)) {
-        return consumers.get(messageType);
+): Consumer => {
+    const consumer = consumers.get(messageType);
+
+    if (consumer) {
+        return consumer;
     }
 
     throw new InvalidMessageTypeException(messageType);
@@ -126,9 +128,13 @@ export class Queue {
     }
 
     private async processMessage(
-        incomingMessage: IncomingMessage,
+        incomingMessage: IncomingMessage | null,
         consumers: Map<MessageConstructor, Consumer>,
     ): Promise<void> {
+        if (incomingMessage === null) {
+            return;
+        }
+
         let consumer: Consumer;
         let job: Job;
 
@@ -153,6 +159,7 @@ export class Queue {
                 msg_attempts: getHeaderValue(incomingMessage, HEADER_X_ATTEMPTS, 1),
             });
             await this.requeue(incomingMessage);
+            return;
         }
 
         try {
