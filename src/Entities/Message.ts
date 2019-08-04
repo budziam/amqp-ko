@@ -1,5 +1,5 @@
 import { KeyRenamer } from "../KeyRenamer";
-import snakeCase from "snake-case";
+import snakeCase = require("snake-case");
 
 export type MessageConstructor<T extends Message = Message> = new (...args: any[]) => T;
 
