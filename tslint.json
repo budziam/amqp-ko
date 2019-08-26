@@ -44,6 +44,7 @@
     "prefer-function-over-method": false,
     "strict-boolean-expressions": false,
     "strict-comparisons": false,
+    "strict-string-expressions": false,
     "typedef": [
       true,
       "call-signature",
