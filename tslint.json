@@ -20,6 +20,7 @@
       "pascal-case"
     ],
     "interface-name": false,
+    "invalid-void": false,
     "max-classes-per-file": false,
     "member-ordering": false,
     "newline-before-return": false,
@@ -38,11 +39,12 @@
     "no-use-before-declare": false,
     "no-unsafe-any": false,
     "no-void-expression": false,
-    "object-literal-sort-keys": false,
+    "object-literal-sort-keys": [true, "match-declaration-order-only"],
     "ordered-imports": false,
     "prefer-function-over-method": false,
     "strict-boolean-expressions": false,
     "strict-comparisons": false,
+    "strict-string-expressions": false,
     "typedef": [
       true,
       "call-signature",

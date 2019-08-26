@@ -1,6 +1,6 @@
 {
   "name": "amqp-ko",
-  "version": "1.1.4",
+  "version": "1.2.0",
   "license": "MIT",
   "author": "Michał Budziak",
   "homepage": "https://nalunch.com/",
@@ -15,31 +15,32 @@
     "amqp-ko",
     "amqp",
     "microservice",
+    "nalunch",
+    "nalunchcom",
     "rabbitmq",
     "queue",
-    "tools"
+    "tools",
+    "typescript"
   ],
   "scripts": {
     "build": "tsc",
     "lint": "tslint -p tsconfig.test.json -t stylish",
     "lint:fix": "yarn lint --fix",
-    "pretty": "prettier '{src,__tests__}/**/*.ts' --check",
+    "pretty": "prettier './{src,__tests__}/**/*.ts' --check",
     "pretty:fix": "yarn pretty --write",
-    "postinstall": "tsc",
     "test": "jest --reporters=default"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "dependencies": {
-    "@types/amqplib": "^0.5.13",
-    "@types/node": "^12.6.2",
     "amqplib": "^0.5.3",
     "snake-case": "^2.1.0",
-    "typescript": "^3.5.3",
     "winston": "^3.2.1"
   },
   "devDependencies": {
+    "@types/amqplib": "^0.5.13",
     "@types/jest": "^24.0.15",
+    "@types/node": "^12.6.2",
     "husky": "^3.0.0",
     "jest": "^24.8.0",
     "jest-junit": "^6.4.0",
@@ -48,6 +49,7 @@
     "ts-jest": "^24.0.2",
     "ts-node": "^8.3.0",
     "tslint": "^5.18.0",
-    "tslint-config-prettier": "^1.18.0"
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.5.3"
   }
 }
