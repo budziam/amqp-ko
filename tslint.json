@@ -20,6 +20,7 @@
       "pascal-case"
     ],
     "interface-name": false,
+    "invalid-void": false,
     "max-classes-per-file": false,
     "member-ordering": false,
     "newline-before-return": false,
